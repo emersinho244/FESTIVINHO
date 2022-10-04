@@ -1,0 +1,58 @@
+<ion-content>
+
+  <h1>Festivinho</h1>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="limpar()">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="conteudo">
+
+    <div class="linha">
+      <div class="produto">Criança</div>
+      <div class="mostrador">
+        <ion-button (click)="removerCrianca()">-</ion-button>
+        <input type="number" [(ngModel)]="quantidadeCrianca" (keyup)="calcularTotalConta()">
+        <ion-button (click)="adicionarCrianca()">+</ion-button>
+      </div>
+    </div>
+
+    <div class="linha">
+      <div class="produto">Adulto </div>
+      <div class="mostrador">
+        <ion-button (click)="removerAdulto()">-</ion-button>
+        <input type="number" [(ngModel)]="quantidadeAdulto" (keyup)="calcularTotalConta()">
+        <ion-button (click)="adicionarAdulto()">+</ion-button>
+      </div>
+    </div>
+<Br>
+    <div class="linha">
+      <div class="produto">Salgadinho(un)</div>
+      <div class="mostrador" class="mostrador2">
+
+        {{totalSalgadinho}}
+
+      </div>
+    </div>
+
+    <div class="linha">
+      <div class="produto">Refrigerante(L)</div>
+      <div class="mostrador" class="mostrador2">
+
+        {{totalRefrigerante.toFixed(1)}}
+
+      </div>
+    </div>
+
+    <div class="linha">
+      <div class="produto">Bolo(Kg)</div>
+      <div class="mostrador" class="mostrador2">
+
+        {{totalBolo.toFixed(1)}}
+ 
+      </div>
+    </div>
+  </div>
+</ion-content>
